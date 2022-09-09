@@ -136,6 +136,11 @@ void user_borrow_book()
         cout<<"You borrowed this book before"<<endl;
         return;
     }
+    if(users[user_indx].len==mxbooks)
+    {
+        cout<<"You can't borrow more books, as you exceeded the maximum number for borrowed books"<<endl;
+        return;
+    }
     users[user_indx].borrowed_books_by_user[users[user_indx].len++]=book_id;
     book[book_indx].borrowed++;
 }
